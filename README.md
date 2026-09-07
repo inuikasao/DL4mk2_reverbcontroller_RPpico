@@ -79,24 +79,30 @@ MIDI Output Circuit (Type-A)
 
 # Software Setup
 
-Environment
+# Firmware Installation
 
-  - Arduino IDE
-  - Board Manager: Install Raspberry Pi Pico/RP2040 by Earle F. Philhower, III.
-  - Board Selection: Select "Waveshare RP2040-Zero" or "Generic RP2040". Note:
-    Do not select "Raspberry Pi Pico" as it reserves GP29 for internal voltage
-    monitoring.
+Choose your preferred method to install the firmware:
 
-Required Libraries
+Option 1: UF2 Method (Easiest)
 
-Install the following via the Arduino Library Manager:
+1.  Hold the BOOTSEL button on your board while connecting it to your PC via
+    USB.
+2.  The board will appear as a drive named RPI-RP2.
+3.  Drag and drop the provided .uf2 file into that drive.
+4.  The board will automatically reboot and start functioning.
 
-1.  MIDI Library (by Forty Seven Effects)
-2.  RotaryEncoder (by Matthias Hertel)
-3.  Adafruit GFX Library
-4.  Adafruit SSD1306
+Option 2: Arduino IDE (For Customization)
 
-Usage
+1.  Install the Raspberry Pi Pico/RP2040 core by Earle Philhower.
+2.  Install the following libraries via Library Manager:
+      - MIDI Library
+      - RotaryEncoder
+      - Adafruit GFX Library
+      - Adafruit SSD1306
+3.  Select Board: "Generic RP2040" (required to enable ADC3/GP29).
+4.  Open the .ino sketch and click Upload.
+
+# Usage
 
 1.  Connect the controller to the Line 6 DL4 MkII MIDI IN port using a
     standard 3.5mm TRS cable.
@@ -106,6 +112,6 @@ Usage
 4.  Turn Potentiometers: Adjust parameters. The OLED will automatically pop up
     the HUD to show precise values and parameter names.
 
-License
+# License
 
 This project is released under the MIT License.
